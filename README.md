@@ -8,7 +8,7 @@ Kubernetes is a container orchestration system. So first it is good to know abou
 
 <p align=center>
 
-<img  src='./images/Orchestration.png'  alt='Orchestration'/>
+<img  src='./Images/Orchestration.png'  alt='Orchestration'/>
 
 </p>
 
@@ -69,7 +69,7 @@ Kubernetes and Docker are two of the major players in container orchestration. B
 
 <p align=center>
   
-  <img  src='./images/Kubernetes-Swarm-comparison.png'  alt='Comparison'/>
+  <img  src='./Images/Kubernetes-Swarm-comparison.png'  alt='Comparison'/>
 
 </p>
 
@@ -80,7 +80,7 @@ Kubernetes follows client-server architecture. Where we have master installed on
 
 <p align=center>
   
-  <img  src='./images/Kubernetes-architecture.png'  alt='Kubernetes Architecture'/>
+  <img  src='./Images/Kubernetes-architecture.png'  alt='Kubernetes Architecture'/>
   
 </p>
 
