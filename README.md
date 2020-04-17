@@ -6,6 +6,11 @@ Kubernetes is a container orchestration system. So first it is good to know abou
 
 + Container orchestration is the automation of all aspects of coordinating and managing containers. Container orchestration is focused on managing the life cycle of containers and their dynamic environments.
 
+<p align=center>
+
+<img  src='./images/Orchestration.png'  alt='Orchestration'/>
+
+</p>
 
 ### Use
   + Provisioning and deployment of containers
@@ -62,10 +67,22 @@ Kubernetes and Docker are two of the major players in container orchestration. B
 + Container orchestration platforms: let someone else manage Kubernetes for you
 
 
+<p align=center>
+  
+  <img  src='./images/Kubernetes-Swarm-comparison.png'  alt='Comparison'/>
+
+</p>
+
+
 # Kubernetes Architecture
 
 Kubernetes follows client-server architecture. Where we have master installed on one machine and the node on separate Linux machines.
 
+<p align=center>
+  
+  <img  src='./images/Kubernetes-architecture.png'  alt='Kubernetes Architecture'/>
+  
+</p>
 
 ### Important Terms:
 + `Docker` is basically a container engine which is use to create containers on top of an operating system and automates application deployment on the container.
