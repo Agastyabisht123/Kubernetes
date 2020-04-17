@@ -68,6 +68,7 @@ Kubernetes is a container orchestration system. So first it is good to know abou
   - Load Balancing is permitted in Kubernetes when Container Pods are defined as Services. Apart from this, we need to manually configure the load balancing settings.
   - Docker Swarm provides an inbuilt facility of Load Balancing. A common network is joined by all containers that are in the same cluster. This allows connection of any node to any container.
 
+### Comparison Table
 
 <p align=center>
 
