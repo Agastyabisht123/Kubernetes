@@ -28,7 +28,7 @@ Kubernetes is a container orchestration system. So first it is good to know abou
 
 #### How does container orchestration work?
 
-Container orchestration works with tools like Kubernetes and Docker Swarm. Configurations files (for example, docker-compose.yml) tell the container orchestration tool where to gather container images (for example, from Docker Hub), how to establish networking between containers, how to mount storage volumes, and where to store logs for that container. The orchestration tool also schedules deployment of containers into clusters and determines the best host for the container. After a host is decided, the orchestration tool manages the lifecycle of the container based on predetermined specifications. Container orchestration tools work in any environment that runs containers.
+<P> Container orchestration works with tools like Kubernetes and Docker Swarm. Configurations files (for example, docker-compose.yml) tell the container orchestration tool where to gather container images (for example, from Docker Hub), how to establish networking between containers, how to mount storage volumes, and where to store logs for that container. The orchestration tool also schedules deployment of containers into clusters and determines the best host for the container. After a host is decided, the orchestration tool manages the lifecycle of the container based on predetermined specifications. Container orchestration tools work in any environment that runs containers. </p>
 
 + Orchestration tools for Docker include the following:
   +  Docker Machine — Provisions hosts and installs Docker Engine. 
@@ -44,30 +44,29 @@ Container orchestration works with tools like Kubernetes and Docker Swarm. Confi
   
 
 
-## Kubernetes Versus Docker Swarm
-Though both the open-source orchestration platforms provide much of the same functionalities, there are some fundamental differences between how these two operate. Below here are some of the notable points.
-Kubernetes and Docker are two of the major players in container orchestration. Both of these tools enable us to handle a cluster of servers that run one or more services on them.
+## Kubernetes VS Docker Swarm
+<p> Kubernetes and Docker are two of the major players in container orchestration. Both of these tools enable us to handle a cluster of servers that run one or more services on them. </p>
 
-+ Logging and Monitoring
+**Below here are some of the notable points.**
+
++ **Logging and Monitoring**
   - Inbuilt tools have been included in Kubernetes for the purpose of Logging and Monitoring. Logging helps to understand the cause of failures through the analysis of past records/logs. On the other hand, monitoring enables us to be constantly aware of the health of the nodes and the services that are containerized by them.
   - Swarm lacks the capability of inbuilt tools to handle Logging and Monitoring. Though, you can make use of third-party tools to achieve this. The tool ELK is one such example.
 
-+ Building and Running Containers
++ **Building and Running Containers**
   - Kubernetes embraces uniqueness by having its own API, client, and YAML definitions. These are in high contrast to the standard Docker equivalents since it is not possible to use Docker Compose or Docker CLI to define containers.
   - The same Docker CLI is used and new containers can be spinned with a single command.
 
-+ Scalability
++ **Scalability**
   - when it comes to Auto-scaling, Kubernetes is way ahead in the race since it can analyze the server load and scale up or down in tandem with your requirements. If any of the pods get crashed or terminated, it automatically creates new pods.
 
-+ GUI
-  - The GUI provided is a reliable dashboard which can be used to control the cluster.
++ **GUI**
+  - The GUI provided in Kubernetes is a reliable dashboard which can be used to control the cluster.
    - Docker hosts and Swarm Clusters can be managed with the help of third party tool such as Portainer.io that provide an easy management UI.
 
-+ Load Balancing
++ **Load Balancing**
   - Load Balancing is permitted in Kubernetes when Container Pods are defined as Services. Apart from this, we need to manually configure the load balancing settings.
   - Docker Swarm provides an inbuilt facility of Load Balancing. A common network is joined by all containers that are in the same cluster. This allows connection of any node to any container.
-
-+ Container orchestration platforms: let someone else manage Kubernetes for you
 
 
 <p align=center>
@@ -81,7 +80,7 @@ Kubernetes and Docker are two of the major players in container orchestration. B
 
 # Kubernetes Architecture
 
-Kubernetes follows client-server architecture. Where we have master installed on one machine and the node on separate Linux machines.
+Kubernetes follows `client-server` architecture. Where we have master installed on one machine and the node on separate Linux machines.
 
 <p align=center>
 
@@ -92,6 +91,7 @@ Kubernetes follows client-server architecture. Where we have master installed on
 
 
 </p>
+
 
 ### Important Terms:
 + `Docker` is basically a container engine which is use to create containers on top of an operating system and automates application deployment on the container.
@@ -105,18 +105,19 @@ Control Plane is a series of different services that form the Kubernetes Master 
 + `Services` handel request from node or outside node. Usually load balancer.
 + `Replication Controllers` deployment is a YAML object that defines the pods and the number of container instances, called replicas, for each pod. You define the number of replicas you want to have running in the cluster via a ReplicaSet, which is part of the deployment object. So, for example, if a node running a pod dies, the replica set will ensure that another pod is scheduled on another available node.
 
-# Setup Server
-For building the cluster we need three servers of ubuntu distribution.
 
-`Note: You can use AWS EC2 instance to initiate the server. The minimum no. of CPU should me at least 2 in every server.`
+# Setup Server
+For building the cluster we need three servers of **ubuntu distribution**.
+
+**Note:** We can use AWS EC2 instance to initiate the server.
 
 **Tag:**
 
 + **For Server 1:** Kube Master
 
-+ **For Server 2:** Kube Node 1
++ **For Server 2:** Kube Node 1 (Worker Node 1)
 
-+ **For Server 3:** Kube Node 2
++ **For Server 3:** Kube Node 2 (Worker Node 2)
 
 
 #  Setup Docker
@@ -232,11 +233,11 @@ sudo sysctl -p`
 
 `kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml`
 
-+ Verify that all the nodes now have a STATUS of Ready:
++ Verify that all the nodes now have a STATUS of `Ready`:
 
 `kubectl get nodes`
 
-You should see all three of your servers listed, and all should have a STATUS of Ready. It should look something like this:
+You should see all three of your servers listed, and all should have a STATUS of `Ready`. It should look something like this:
 
 ```
 NAME                      STATUS     ROLES    AGE     VERSION
@@ -245,10 +246,10 @@ wboyd2c.mylabserver.com   Ready      <none>   53s     v1.12.2
 wboyd3c.mylabserver.com   Ready      <none>   31s     v1.12.2
 ```
 
-**Note:** It may take a few moments for all nodes to enter the Ready status, so if they are not all Ready, wait a few moments and try again.
+**Note:** It may take a few moments for all nodes to enter the `Ready` status, so if they are not all `Ready`, wait a few moments and try again.
 
 + Run this command to get a list of system pods:
 
 `kubectl get pods -n kube-system`
 
-You should have three pods with flannel in the name, and all three should have a status of Running.
+You should have three pods with `flannel` in the name, and all three should have a status of `Running`.
